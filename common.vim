@@ -42,9 +42,14 @@ set shiftwidth=4
 set autoindent
 set showtabline=2       " Gives The file name tab type 2
 
+"--Omnifunc
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 "--Misc
 set ttyfast
 set nowrap              " Text will not wrap
 set secure
 set exrc
 set list
+let mapleader = " " " map leader to Space
