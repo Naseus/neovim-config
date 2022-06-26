@@ -8,7 +8,6 @@ return require('packer').startup(function()
     'ms-jpq/coq_nvim',
     'ms-jpq/coq.artifacts',
     'ms-jpq/coq.thirdparty',
-    'kyazdani42/nvim-web-devicons',
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
   }
