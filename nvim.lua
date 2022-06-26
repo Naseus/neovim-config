@@ -1,6 +1,9 @@
+-- important locals
+local coq = require('coq')
+local telescope = require('telescope')
+local telFunctions = require('telescope.builtin')
 -- Setup for LSP
 -- COQ
-local coq = require('coq')
 vim.cmd('COQnow -s')
 vim.cmd("let g:coq_settings = { 'display.icons.mode': 'none' }")
 
@@ -37,6 +40,8 @@ for _, lsp in ipairs(servers) do
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
         -- code actions
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+        -- telescope errors
+        vim.keymap.set('n', '<leader>fe', telFunctions.diagnostics)
     end,
     capabilities = capabilities,
   }))
@@ -49,3 +54,8 @@ require('nvim-treesitter.configs').setup({
     additional_vim_regex_highlighting = true,
   },
 })
+
+-- Telescope
+vim.keymap.set('n', '<leader>ff', telFunctions.find_files)
+vim.keymap.set('n', '<leader>fb', telFunctions.buffers)
+vim.keymap.set('n', '<leader>fh', telFunctions.help_tags)
