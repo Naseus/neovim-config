@@ -35,10 +35,9 @@ set splitbelow
 "set termsize=10x0
 
 "---Spaces
-set tabstop=8
+set tabstop=2
 set softtabstop=0
-set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 set showtabline=2       " Gives The file name tab type 2
 
