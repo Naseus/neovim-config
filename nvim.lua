@@ -108,14 +108,8 @@ require 'bufferline'.setup {
     animation = true,
     auto_hide = false,
     tabpages = true,
-    closable = true,
-    --  - left-click: go to buffer
-    --  - middle-click: delete buffer
+    closable = false,
     clickable = true,
-
-    -- Enable/disable icons
-    -- if set to 'numbers', will show buffer index in the tabline
-    -- if set to 'both', will show buffer index and icons in the tabline
     icons = 'numbers',
     -- Configure icons on the bufferline.
     icon_separator_active = '▎',
@@ -127,11 +121,6 @@ require 'bufferline'.setup {
     maximum_padding = 1,
     maximum_length = 30,
 
-    -- New buffer letters are assigned in this order. This order is
-    -- optimal for the qwerty keyboard layout but might need adjustement
-    -- for other layouts.
-    letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
-
     -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
     -- where X is the buffer number. But only a static string is accepted here.
     no_name_title = nil,
@@ -142,6 +131,8 @@ local opts = { noremap = true, silent = true }
 -- Move to previous/next
 vim.keymap.set('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>', opts)
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferNext<CR>', opts)
+vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
 -- Goto buffer in position...
 vim.keymap.set('n', '<leader>1', '<Cmd>BufferGoto 1<CR>', opts)
 vim.keymap.set('n', '<leader>2', '<Cmd>BufferGoto 2<CR>', opts)
